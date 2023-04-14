@@ -1,6 +1,6 @@
 {
-    "name": "Firebase Auth Chrome Extension",
-    "description": "Enabling auth",
+    "name": "Firebase Auth in Chrome Extension",
+    "description": "setting up just the auth",
     "version": "0.1",
     "manifest_version": 2,
     "icons": {

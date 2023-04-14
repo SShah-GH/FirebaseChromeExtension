@@ -23,7 +23,7 @@ const uiConfig = {
       return false;
     },
     uiShown: function () {
-      document.getElementById("sign_in_form").style.display = "none";
+      document.getElementById("my_sign_in").style.display = "none";
       // document.getElementById('wrapper').style.pointerEvents = 'none';
     },
   },
@@ -37,6 +37,13 @@ const uiConfig = {
         prompt: "select_account",
       },
     },
+    {
+      provider: firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      customParameters: {
+        prompt: "consent",
+      },
+    },
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
   ],
   // Terms of service url.
   // tosUrl: '<your-tos-url>',
@@ -44,9 +51,18 @@ const uiConfig = {
   // privacyPolicyUrl: '<your-privacy-policy-url>'
 };
 
-// Add an event listener to the Signup button
-document
-  .querySelector('button[type="submit"]')
-  .addEventListener("click", () => {
-    ui.start("#sign_in_options", uiConfig);
-  });
+document.querySelector("#wrapper").addEventListener("click", () => {
+  ui.start("#sign_in_options", uiConfig);
+});
+
+document.querySelector("#wrapper").addEventListener("mouseover", () => {
+  let sign_in = document.querySelector("#my_sign_in");
+  sign_in.classList.remove("sign_in_no_hover");
+  sign_in.classList.add("sign_in_hover");
+});
+
+document.querySelector("#wrapper").addEventListener("mouseleave", () => {
+  let sign_in = document.querySelector("#my_sign_in");
+  sign_in.classList.remove("sign_in_hover");
+  sign_in.classList.add("sign_in_no_hover");
+});
