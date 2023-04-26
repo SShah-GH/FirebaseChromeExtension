@@ -1,12 +1,4 @@
 {
-    "description": "Ava",
-    "manifest_version": 3,
-    "name": "Ava",
-    "version": "0.1",
-    "web_accessible_resources": []
-  }
-
-  {
     "action": {
       "default_popup": "./src/popup/public/index.html"
     },
